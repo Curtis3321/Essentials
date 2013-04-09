@@ -15,7 +15,9 @@ public class Commandtpa extends EssentialsCommand
 		{
 			throw new NotEnoughArgumentsException();
 		}
-
+		if(user.getPlayer().getName().equalsIgnoreCase(args[0])){
+		    user.getPlayer().sendMessage("§4Oh No! Dont Do that again!");
+		    return;
 
 		IUser player = ess.getUserMap().matchUserExcludingHidden(args[0], user.getPlayer());
 		if (!player.getData().isTeleportEnabled())
